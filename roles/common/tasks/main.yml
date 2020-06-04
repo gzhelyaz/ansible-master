@@ -1,0 +1,15 @@
+---
+- name: Install dotfiles
+  git: repo=https://gitlab.com/mkaag/dotfiles.git dest=~/.dotfiles
+
+- name: Symlink dotfiles
+  file: src=~/.dotfiles/{{ item }}
+        dest=~/.{{ item }}
+        state=link
+        force=yes
+  with_items:
+    - gitconfig
+    - inputrc
+    - tmux.conf
+    - vimrc
+

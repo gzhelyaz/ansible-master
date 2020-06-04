@@ -1,0 +1,33 @@
+---
+- name: Disable Dashboard
+  shell: defaults write com.apple.dashboard mcx-disabled -bool true
+
+- name: Disable some LaunchDaemons
+  shell: launchctl unload -w /System/Library/LaunchDaemons/{{ item }}
+  with_items:
+    - com.apple.apsd.plist
+    - com.apple.netbiosd.plist
+    - com.apple.locationd.plist
+    - com.apple.metadata.mds.plist
+
+- name: Disable some LaunchAgents
+  shell: launchctl unload -w /System/Library/LaunchAgents/{{ item }}
+  with_items:
+    - com.apple.CalendarAgent.plist
+    - com.apple.notificationcenterui.plist
+    - com.apple.quicklook.*
+
+- name: Disabling Unicast ARP Cache Validation Script
+  shell: curl -Ls http://git.io/6YzLCw | bash
+
+- name: Disable Bonjour Script
+  shell: curl -Ls http://git.io/q9j5Zw | bash
+
+- name: Create LaunchAgentsDisabled folder
+  file: path=/System/Library/LaunchAgentsDisabled state=directory mode=0755
+
+- name: Disable more LaunchAgents
+  command: mv /System/Library/LaunchAgents/{{ item }} /System/Library/LaunchAgentsDisabled
+  with_items:
+    - com.apple.gamed.plist
+    - com.apple.AirPlayUIAgent.plist

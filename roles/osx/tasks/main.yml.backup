@@ -1,0 +1,8 @@
+---
+- include: homebrew.yml
+- include: atom.yml
+- include: pip.yml
+- include: gem.yml
+- include: sketch_plugins.yml
+- include: launchd.yml
+- include: fortunes.yml

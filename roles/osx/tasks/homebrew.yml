@@ -1,0 +1,54 @@
+---
+- name: Update Homebrew
+  homebrew: update_homebrew=yes
+
+- homebrew:
+    name: ack,awscli,cask,coreutils,curl,fasd,findutils,fortune,git,httpie,hugo,imagemagick,nmap,python,python3,readline,rename,ssh-copy-id,terraform,tree,vim,watch,wget
+    state: latest
+    update_homebrew: yes
+
+- name: Install libraries with Homebrew Cask
+  homebrew_cask: name={{ item }} state=upgraded
+  with_items:
+    - 1password
+    - adguard
+    - alfred
+    - appcleaner
+    - balenaetcher
+    - bartender
+    - brave-browser
+    - commander-one
+    - cryptomator
+    - daisydisk
+    - debookee
+    - dropbox
+    - flux
+    - firefox
+    - gemini
+    - iterm2
+    - iina
+    - moom
+    - renamer
+    - spectacle
+    - spotify
+    - sysex-librarian
+    - telegram-desktop
+    - the-unarchiver
+    - transmission
+    - vagrant
+    - virtualbox
+    - vcv-rack
+
+- name: Cleanup Brew packages
+  command: brew cleanup
+
+- name: Cleanup Brew Cask packages
+  command: brew cask cleanup
+
+- name: Create $HOME/.bin
+  file:
+    path: $HOME/.bin
+    state: directory
+
+- name: Setup updatebrew.sh
+  get_url: url=https://gitlab.com/snippets/7240/raw dest=~/.bin/updatebrew.sh mode=0755

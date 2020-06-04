@@ -1,0 +1,12 @@
+---
+- name: Download fortune-bofh-excuses
+  get_url: url=https://raw.githubusercontent.com/noise/fortune-redis/master/fortunes/bofh-excuses dest=/usr/local/Cellar/fortune/9708/share/games/fortunes/bofh-excuses mode=0640
+
+- name: Download fortune-familyguy
+  get_url: url=https://raw.githubusercontent.com/stjohnjohnson/chrome-newtabfortune/master/fortunes/familyguy dest=/usr/local/Cellar/fortune/9708/share/games/fortunes/familyguy mode=0640
+
+- name: Compile every fortune files into data files
+  shell: strfile /usr/local/Cellar/fortune/9708/share/games/fortunes/{{ item }} /usr/local/Cellar/fortune/9708/share/games/fortunes/{{ item }}.dat
+  with_items:
+    - bofh-excuses
+    - familyguy

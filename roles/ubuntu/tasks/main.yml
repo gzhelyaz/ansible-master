@@ -1,0 +1,32 @@
+---
+- name: Install python-pycurl for fasd
+  apt: name=python-pycurl state=present
+
+- name: Add APT repo for fasd
+  apt_repository: repo='ppa:fcwu-tw/ppa' state=present
+
+- name: Update APT cache
+  apt: update_cache=yes
+
+- name: Install libraries using APT
+  apt: name={{ item }} state=latest
+  with_items:
+    - ack-grep
+    - bash
+    - curl
+    - git
+    - nmap
+    - node
+    - most
+    - python
+    - python-pip
+    - python3
+    - vim
+    - wget
+    - zsh
+
+- name: Change shell to ZSH
+  user: shell=/bin/zsh name={{ ansible_ssh_user }}
+
+- name: Install FASD
+  copy: src=fasd dest=/usr/local/bin/fasd mode=755

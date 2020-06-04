@@ -1,0 +1,9 @@
+---
+- name: Install PIP packages
+  pip: name={{ item }}
+  with_items:
+    - ansible-shell
+    - Jinja2
+    - PyYAML
+    - paramiko
+    - speedtest-cli

@@ -1,2 +1,13 @@
-# ansible-master
-Ansible playbook for new OS setup
+# ansible-osx
+
+```shell
+sudo visudo
+```
+
+```vim
+gzh ALL=(ALL) NOPASSWD: ALL
+```
+
+```shell
+./launch
+```
