@@ -12,4 +12,6 @@
     - inputrc
     - tmux.conf
     - vimrc
+    - zprofile
+    - zshrc
 
