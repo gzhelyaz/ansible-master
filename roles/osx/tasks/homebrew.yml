@@ -28,7 +28,10 @@
     - iterm2
     - iina
     - moom
+    - mosh
+    - raspberry-pi-imager
     - renamer
+    - sdformatter
     - spectacle
     - spotify
     - sysex-librarian
@@ -38,6 +41,7 @@
     - vagrant
     - virtualbox
     - vcv-rack
+    - xld
 
 - name: Cleanup Brew packages
   command: brew cleanup
