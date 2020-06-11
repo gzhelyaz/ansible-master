@@ -3,7 +3,7 @@
   homebrew: update_homebrew=yes
 
 - homebrew:
-    name: ack,awscli,cask,coreutils,curl,fasd,findutils,fortune,git,httpie,hugo,imagemagick,nmap,python,python3,readline,rename,ssh-copy-id,terraform,tree,vim,watch,wget
+    name: ack,awscli,cask,coreutils,curl,fasd,findutils,fortune,git,httpie,hugo,imagemagick,nmap,python,python3,readline,rename,rclone,ssh-copy-id,terraform,tree,vim,vifm,watch,wget
     state: latest
     update_homebrew: yes
 
