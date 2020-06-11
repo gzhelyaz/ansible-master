@@ -1,6 +1,6 @@
 ---
 - name: Install dotfiles
-  git: repo=https://gitlab.com/mkaag/dotfiles.git dest=~/.dotfiles
+  git: repo=git@github.com:gzhelyaz/dotfiles.git dest=~/.dotfiles
 
 - name: Symlink dotfiles
   file: src=~/.dotfiles/{{ item }}
