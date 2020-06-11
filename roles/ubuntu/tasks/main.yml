@@ -18,9 +18,11 @@
     - nmap
     - node
     - most
+    - mosh
     - python
     - python-pip
     - python3
+    - rclone
     - vim
     - wget
     - zsh
