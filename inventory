@@ -4,3 +4,6 @@ localhost ansible_connection=local
 [homelab]
 192.168.0.7
 192.168.0.8
+
+[mooncake]
+mooncake.local
