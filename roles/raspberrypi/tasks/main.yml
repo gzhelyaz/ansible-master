@@ -1,0 +1,16 @@
+---
+- name: Update APT cache
+  apt: update_cache=yes
+
+- name: Install libraries using APT
+  apt: name={{ item }} state=latest
+  with_items:
+    - git
+    - nmap
+    - most
+    - mosh
+    - python3
+    - rclone
+    - vim
+    - zsh
+
