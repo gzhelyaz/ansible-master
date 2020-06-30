@@ -8,6 +8,7 @@
         state=link
         force=yes
   with_items:
+    - bashrc
     - gitconfig
     - inputrc
     - tmux.conf

@@ -3,7 +3,7 @@
   homebrew: update_homebrew=yes
 
 - homebrew:
-    name: ack,awscli,cask,coreutils,curl,fasd,findutils,fortune,git,httpie,hugo,imagemagick,nmap,python,python3,readline,rename,rclone,ssh-copy-id,terraform,tree,vim,vifm,watch,wget
+    name: ack,awscli,cask,coreutils,curl,fasd,ffmpeg,findutils,fortune,git,httpie,hugo,imagemagick,mosh,nmap,pyenv,readline,rename,rclone,ssh-copy-id,terraform,tree,vim,vifm,watch,wget
     state: latest
     update_homebrew: yes
 
@@ -22,13 +22,13 @@
     - daisydisk
     - debookee
     - dropbox
+    - fluor
     - flux
     - firefox
     - gemini
     - iterm2
     - iina
     - moom
-    - mosh
     - raspberry-pi-imager
     - renamer
     - sdformatter

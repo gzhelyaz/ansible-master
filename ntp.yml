@@ -1,0 +1,8 @@
+---
+- hosts: homelab
+  become: yes
+  tasks:
+      - name: Ensure NTP is installed.
+        apt: name=ntp state=present
+      - name: Ensure NTP is running.
+        service: name=ntp state=started enabled=yes
