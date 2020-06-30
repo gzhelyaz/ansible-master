@@ -1,6 +1,6 @@
 ---
 - hosts: mooncake
   gather_facts: False
+  become: yes
   roles:
-    - role: common
     - role: raspberrypi
